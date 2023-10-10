@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A webpage that allows users to generator a password depending on their specific requirements">
+    <meta name="author" content="Jonathan M.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="CSS/generator.css">
+    <link rel="icon" href="Images/icon.ico">
+    <title>Password Generator | Generator</title>
+</head>
+<body>
+    <!-- Header & Navbar-->
+    <header>
+        <img src="Images/icon.png" alt="Icon">
+        <nav>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="generator.html" class="current">Generator</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Content Wrapper -->
+    <div class="wrapper">
+        <div id="contentDiv">
+            <h1>This is <em>Password Generator!</em></h1>
+            <div id="generatorForm">
+                <div id="outputLabelDiv">
+                    <label for="outputField">
+                        <input type="text" id="outputField" name="outputField"/>
+                    </label>
+                </div>
+                <div class="inputDiv">
+                    <label for="passwordLength" id="passwordLengthLabel">
+                        Password Length:
+                        <output name="passwordLengthAmount" id="passwordLengthAmount" for="passwordLength">4</output>
+                        <input type="range" id="passwordLength" name="passwordLength" min="4" max="32" value="4" oninput="passwordLengthAmount.value = passwordLength.value"/>
+                    </label>
+                </div>
+                <div class="inputDiv">
+                    <label id="labelPassChar">
+                        Password Characteristics:
+                    </label>
+                    <fieldset id="passwordOptions">
+                        <div class="passwordOptionDiv">
+                            <label for="optionUpperCase">
+                                <input type="checkbox" id="optionUpperCase" name="optionUpperCase" value="optionUpperCase"/>
+                                &larr;Uppercase
+                            </label>
+                        </div>
+                        <div class="passwordOptionDiv">
+                            <label for="optionLowerCase">
+                                <input type="checkbox" id="optionLowerCase" name="optionLowerCase" value="optionLowerCase"/>
+                                &larr;Lowercase
+                            </label>
+                        </div>
+                        <div class="passwordOptionDiv">
+                            <label for="optionNumbers">
+                                <input type="checkbox" id="optionNumbers" name="optionNumbers" value="optionNumbers"/>
+                                &larr;Numbers
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="inputDiv">
+                    <label>
+                        Special Characters:
+                    </label>
+                    <fieldset id="specialCharOptions">
+                        <div class="specialOptionDiv">
+                            <label for="specialOptEx">
+                                <input type="checkbox" id="specialOptEx" name="specialOptEx" value="specialOptEx"/>
+                                &larr; &#33;
+                            </label>
+                        </div>
+                        <div class="specialOptionDiv">
+                            <label for="specialOptHash">
+                                <input type="checkbox" id="specialOptHash" name="specialOptHash" value="specialOptHash"/>
+                                &larr; &#35;
+                            </label>
+                        </div>
+                        <div class="specialOptionDiv">
+                            <label for="specialOptAst">
+                                <input type="checkbox" id="specialOptAst" name="specialOptAst" value="specialOptAst"/>
+                                &larr; &#42;
+                            </label>
+                        </div>
+                        <div class="specialOptionDiv">
+                            <label for="specialOptQues">
+                                <input type="checkbox" id="specialOptQues" name="specialOptQues" value="specialOptQues"/>
+                                &larr; &#63;
+                            </label>
+                        </div>
+                        <div class="specialOptionDiv">
+                            <label for="specialOptDoll">
+                                <input type="checkbox" id="specialOptDoll" name="specialOptDoll" value="specialOptDoll"/>
+                                &larr; &#36;
+                            </label>
+                        </div>
+                        <div class="specialOptionDiv">
+                            <label for="specialOptMin">
+                                <input type="checkbox" id="specialOptMin" name="specialOptMin" value="specialOptMin"/>
+                                &larr; &#45;
+                            </label>
+                        </div>
+                        <div class="specialOptionDiv">
+                            <label for="specialOptPer">
+                                <input type="checkbox" id="specialOptPer" name="specialOptPer" value="specialOptPer"/>
+                                &larr; &#46;
+                            </label>
+                        </div>
+                        <div class="specialOptionDiv">
+                            <label for="specialOptEquiv">
+                                <input type="checkbox" id="specialOptEquiv" name="specialOptEquiv" value="specialOptEquiv"/>
+                                &larr; &#126;
+                            </label>
+                        </div>
+                        <div class="specialOptionDiv">
+                            <label for="specialOptUnd">
+                                <input type="checkbox" id="specialOptUnd" name="specialOptUnd" value="specialOptUnd"/>
+                                &larr; &#95;
+                            </label>
+                        </div>
+                        <div class="specialOptionDiv">
+                            <label for="specialOptPerc">
+                                <input type="checkbox" id="specialOptPerc" name="specialOptPerc" value="specialOptPerc"/>
+                                &larr; &#37;
+                            </label>
+                        </div>
+                        <div class="specialOptionDiv">
+                            <label for="specialOptCaret">
+                                <input type="checkbox" id="specialOptCaret" name="specialOptCaret" value="specialOptCaret"/>
+                                &larr; &#94;
+                            </label>
+                        </div>
+                        <div class="specialOptionDiv">
+                            <label for="specialOptVert">
+                                <input type="checkbox" id="specialOptVert" name="specialOptVert" value="specialOptVert"/>
+                                &larr; &#124;
+                            </label>
+                        </div>
+                        <div class="specialOptionDiv">
+                            <label for="specialOptOpenPar">
+                                <input type="checkbox" id="specialOptOpenPar" name="specialOptOpenPar" value="specialOptOpenPar"/>
+                                &larr; &#40;
+                            </label>
+                        </div>
+                        <div class="specialOptionDiv">
+                            <label for="specialOptClosedPar">
+                                <input type="checkbox" id="specialOptClosedPar" name="specialOptClosedPar" value="specialOptClosedPar"/>
+                                &larr; &#41;
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div id="buttonDiv">
+                    <button id="submitBtn" type="submit" onclick="funcGenPass()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="JavaScript/main.js"></script>
+</body>
+</html>
